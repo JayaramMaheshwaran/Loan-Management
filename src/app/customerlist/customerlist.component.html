@@ -1,0 +1,50 @@
+<body>
+  <div><app-header></app-header></div>
+
+<br>
+<br><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 >Customers List</h2>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div *ngFor="let customer of Customer | async" class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Name: {{ customer.firstName }} {{ customer.lastName }}</h5>
+                  <p class="card-text">Place: {{ customer.address }}</p>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Contact:</strong> {{ customer.contactNo }}</li>
+                    <li class="list-group-item"><strong>Email:</strong> {{ customer.email }}</li>
+                    <li class="list-group-item"><strong>Gender:</strong> {{ customer.gender }}</li><br>
+                  </ul>
+                  <div class="btn-group mt-3">
+                    <button (click)="deleteCustomer(customer.customerId)" class="btn btn-danger" style="margin-right: 10px; background-color: #ff4444;">
+                      Delete
+                    </button>
+                    <button (click)="updateBooking(customer.customerId)" class="btn btn-info" style="margin-right: 10px; background-color: #0099cc;">
+                      Update customer
+                    </button>
+                    <button (click)="bookingDetails(customer.customerId)" class="btn btn-info" style="background-color: #0099cc;">
+                      Customer Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+
+  

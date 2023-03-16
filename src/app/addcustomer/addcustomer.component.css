@@ -1,0 +1,53 @@
+/* Center the form on the page */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Style the form elements */
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  
+  label {
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+    color: #fff;
+  }
+  
+  /* Add some padding to the form */
+  form {
+    padding: 20px;
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1; /* add a z-index */
+    background-color: #ff8800;
+    position: relative; /* add position relative to enable z-index */
+  }
+
+body{
+    background-color: #f5f5f5;
+    background-image: url('https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center center;
+    z-index: 0; /* lower z-index than form */
+
+}

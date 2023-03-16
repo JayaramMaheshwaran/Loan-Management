@@ -1,0 +1,53 @@
+
+<body>
+    <div id="background-image">
+      <app-header></app-header><br><br><br>
+      <div *ngIf="message" style="color: rgb(247, 247, 251);"><h1 style="font-family: fantasy;">{{ message }}</h1></div>
+      <div class="center">
+        <h2 style="color: white;"><strong>Loans</strong> </h2>
+        
+        <button (click)="loanFormVisible = true">Add Loan</button>
+      </div>
+  
+      <div *ngIf="loanFormVisible">
+        <h3 style="color: white; text-align: center;">{{ selectedLoan.id ? 'Edit Loan' : 'Add Loan' }}</h3>
+        <form>
+          <div>
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" name="loanAmount" [(ngModel)]="selectedLoan.loanAmount" required>
+          </div><br>
+          <div>
+            <label for="interestRate">Interest Rate:</label>
+            <input type="number" name="interestRate" [(ngModel)]="selectedLoan.interestRate" required>
+          </div><br>
+          <div>
+            <label for="loanDuration">Loan Duration:</label>
+            <input type="number" name="loanDuration" [(ngModel)]="selectedLoan.loanDuration" required>
+          </div><br>
+          <button type="submit" (click)="selectedLoan.id ? updateLoan() : addLoan()">Save</button>
+          <button type="button" (click)="loanFormVisible = false">Cancel</button>
+        </form>
+      </div>
+  
+      <div class="card-container">
+        <div class="card" *ngFor="let loan of loans">
+          <div class="card-header">
+            Loan {{ loan.id }}
+          </div>
+          <div class="card-body">
+            <div class="card-text">
+              <p>Loan Amount: {{ loan.loanAmount }}</p>
+              <p>Interest Rate: {{ loan.interestRate }}</p>
+              <p>Loan Duration: {{ loan.loanDuration }}</p>
+            </div>
+            <div class="card-buttons">
+              <button class="edit-button" (click)="onSelect(loan)">Edit</button>
+              <button (click)="deleteLoan(loan.id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+

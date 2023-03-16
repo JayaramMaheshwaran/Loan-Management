@@ -1,0 +1,25 @@
+/* Set the background color of the navbar */
+.navbar {
+  background-color: #333;
+}
+
+/* Set the color of the navbar links */
+.navbar a {
+  color: white;
+}
+
+/* Add some padding to the navbar links */
+.navbar a {
+  padding: 0.5rem 1rem;
+}
+
+/* Highlight the active link */
+.navbar a.active {
+  background-color: white;
+  color: black;
+}
+
+/* Set the color of the hamburger menu icon */
+.navbar-toggler-icon {
+  color: white;
+}

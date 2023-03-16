@@ -1,0 +1,17 @@
+body{
+    background-color: #faf8f8;
+    background-image: url('https://images.pexels.com/photos/259209/pexels-photo-259209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set the height to the viewport height */
+}
+.card {
+    background-color: #f5a003;
+  }
+ 
+  .panel-heading:hover h2 {
+    color: #002fff;
+    transition: all 0.3s ease-in-out;
+  }
+  
